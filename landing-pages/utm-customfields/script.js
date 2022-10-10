@@ -27,8 +27,8 @@
                 data = JSON.parse(data);
             }
             
-            var current_session = data?.current_session?.value ? data?.current_session?.value : '';
-            var first_session = data?.first_session?.value ? data?.first_session?.value : '';
+            var current_session = data.current_session.value ? data.current_session.value : '';
+            var first_session = data.first_session.value ? data.first_session.value : '';
             if( current_session !== '' )
                 params = current_session;
             else if( first_session !== '' )
