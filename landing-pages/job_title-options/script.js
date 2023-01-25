@@ -1,5 +1,5 @@
 <script type="text/javascript">
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', function(event) {
     // Substitui input text por select
     document.querySelectorAll('input[name="job_title"]').forEach( function(element) {
         var id = element.id;
