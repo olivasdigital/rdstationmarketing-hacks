@@ -47,10 +47,42 @@
     utm_campaign = url.searchParams.get('utm_campaign') ? url.searchParams.get('utm_campaign') : '';
     utm_content = url.searchParams.get('utm_content') ? url.searchParams.get('utm_content') : '';
 
-    document.querySelectorAll("form").forEach( function(element) {
-        element.insertAdjacentHTML('afterbegin', '<input type="hidden" name="cf_utm_source" value="'+ utm_source +'"></input>');
-        element.insertAdjacentHTML('afterbegin', '<input type="hidden" name="cf_utm_medium" value="'+ utm_medium +'"></input>');
-        element.insertAdjacentHTML('afterbegin', '<input type="hidden" name="cf_utm_campaign" value="'+ utm_campaign +'"></input>');
-        element.insertAdjacentHTML('afterbegin', '<input type="hidden" name="cf_utm_content" value="'+ utm_content +'"></input>');
-    });
+    setTimeout(function() {
+        document.querySelectorAll("form").forEach( function(frmElement) {
+            utm_source_check = false;
+            utm_medium_check = false;
+            utm_campaign_check = false;
+            utm_content_check = false;
+            Array.from(frmElement.elements).forEach( function(inputElement) {
+                if( utm_source_check == false && ( inputElement.name == "utm_source" || inputElement.name == "cf_utm_source" ) && inputElement.value == "" )
+                {
+                    inputElement.value = utm_source;
+                    utm_source_check = true;
+                }
+                if( utm_medium_check == false && ( inputElement.name == "utm_medium" || inputElement.name == "cf_utm_medium" ) && inputElement.value == "" )
+                {
+                    inputElement.value = utm_medium;
+                    utm_medium_check = true;
+                }
+                if( utm_campaign_check == false && ( inputElement.name == "utm_campaign" || inputElement.name == "cf_utm_campaign" ) && inputElement.value == "" )
+                {
+                    inputElement.value = utm_campaign;
+                    utm_campaign_check = true;
+                }
+                if( utm_content_check == false && ( inputElement.name == "utm_content" || inputElement.name == "cf_utm_content" ) && inputElement.value == "" )
+                {
+                    inputElement.value = utm_content;
+                    utm_content_check = true;
+                }
+            });
+            if( utm_source_check == false )
+                frmElement.insertAdjacentHTML('afterbegin', '<input type="hidden" name="cf_utm_source" value="'+ utm_source +'"></input>');
+            if( utm_medium_check == false )
+                frmElement.insertAdjacentHTML('afterbegin', '<input type="hidden" name="cf_utm_medium" value="'+ utm_medium +'"></input>');
+            if( utm_campaign_check == false )
+                frmElement.insertAdjacentHTML('afterbegin', '<input type="hidden" name="cf_utm_campaign" value="'+ utm_campaign +'"></input>');
+            if( utm_content_check == false )
+                frmElement.insertAdjacentHTML('afterbegin', '<input type="hidden" name="cf_utm_content" value="'+ utm_content +'"></input>');
+        });
+    }, 500);
 </script>
