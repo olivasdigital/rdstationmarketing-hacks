@@ -41,7 +41,7 @@ Ainda no GTM siga as etapas:
 1. Tags > Nova
 2. Nomeie como "RD - translate form - en"
 3. Tipo de tag: "HTML personalizado"
-4. HTML: abra o translate_pt2en.js e coloque o conteúdo aqui
+4. HTML: abra o script_pt2en.js e coloque o conteúdo aqui
 5. Acionamento, selecione o que acabamos de criar "RD - Landing Page - en"
 6. Salve
 7. Publique seu container
