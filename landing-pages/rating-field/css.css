@@ -1,0 +1,45 @@
+/* Ajusta cor dos campos não selecionados */
+.br-theme-bars-square .br-widget a {
+    color: #000 !important;
+    border: 1px solid #000000 !important;
+}
+
+/* Seleciona elementos com data-rating-value de 0 a 6 e os torna vermelhos */
+a[data-rating-value="0"].br-current,
+a[data-rating-value="1"].br-current,
+a[data-rating-value="2"].br-current,
+a[data-rating-value="3"].br-current,
+a[data-rating-value="4"].br-current,
+a[data-rating-value="5"].br-current,
+a[data-rating-value="6"].br-current,
+a[data-rating-value="0"].br-active,
+a[data-rating-value="1"].br-active,
+a[data-rating-value="2"].br-active,
+a[data-rating-value="3"].br-active,
+a[data-rating-value="4"].br-active,
+a[data-rating-value="5"].br-active,
+a[data-rating-value="6"].br-active {
+    color: #fff !important;
+    border-color: red !important;
+    background-color: red !important;
+}
+
+/* Seleciona elementos com data-rating-value 7 e 8 e os torna amarelos */
+a[data-rating-value="7"].br-current,
+a[data-rating-value="8"].br-current,
+a[data-rating-value="7"].br-active,
+a[data-rating-value="8"].br-active {
+    color: #fff !important;
+    border-color: rgb(255, 170, 0) !important;
+    background-color: rgb(255, 170, 0) !important;
+}
+
+/* Seleciona elementos com data-rating-value 9 e 10 e os torna verdes */
+a[data-rating-value="9"].br-current,
+a[data-rating-value="10"].br-current,
+a[data-rating-value="9"].br-active,
+a[data-rating-value="10"].br-active {
+    color: #fff !important;
+    border-color: green !important;
+    background-color: green !important;
+}
